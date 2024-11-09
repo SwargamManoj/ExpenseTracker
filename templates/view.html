@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Expenses</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>View Expenses</h1>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Action</th>
+            <!-- New column for the delete button -->
+          </tr>
+        </thead>
+        <tbody>
+          {% for expense in expenses %}
+          <tr>
+            <td>{{ expense['Date'] }}</td>
+            <td>{{ expense['Category'] }}</td>
+            <td>{{ expense['Description'] }}</td>
+            <td>${{ expense['Amount'] }}</td>
+            <td>
+              <!-- Form with delete button for each expense -->
+              <form
+                action="{{ url_for('delete_expense', expense_id=loop.index0) }}"
+                method="post"
+                style="display: inline"
+              >
+                <button type="submit" class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <h3 class="text-right">Total Expenses: ${{ total_expenses }}</h3>
+      <a href="{{ url_for('index') }}" class="btn">Back</a>
+    </div>
+  </body>
+</html>

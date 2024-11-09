@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Expense Tracker</h1>
+      <a href="{{ url_for('add_expense') }}" class="btn">Add Expense</a>
+      <a href="{{ url_for('view_expenses') }}" class="btn">View Expenses</a>
+      <a href="{{ url_for('analyze_expenses') }}" class="btn"
+        >Analyze Expenses</a
+      >
+    </div>
+  </body>
+</html>
