@@ -1,8 +1,8 @@
-#Expense Tracker - Your Personal Finance Assistant
+**Expense Tracker - Your Personal Finance Assistant
 
 Expense Tracker is a powerful yet simple tool designed to help you take control of your finances. With its user-friendly interface, you can effortlessly record your income and expenses, categorize transactions, and track your spending habits.
 
-#Key features include:
+**Key features include:
 
 __Intuitive Budgeting:__ Set realistic budgets for different categories, such as groceries, transportation, and entertainment.
 __Customizable Reports:__ Generate detailed reports to analyze your spending patterns and identify areas for improvement.
